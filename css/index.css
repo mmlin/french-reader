@@ -1,0 +1,205 @@
+html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-image: url(../img/bg-tile.png);
+    color: #333;
+    font: 16px 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    margin: 0;
+    min-height: 100%;
+    padding: 0;
+}
+.container {
+    margin: auto;
+    position: relative;
+    width: 960px;
+}
+.header {
+    background-color: #000;
+    padding: 20px 0;
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+}
+.title {
+    color: #fff;
+    font: 300 16px Lato, sans-serif;
+    letter-spacing: 1px;
+    line-height: 25px;
+    margin: 0;
+    margin-left: 5px;
+    padding: 0;
+    text-transform: uppercase;
+}
+.edit, .save {
+    background-color: #488373;
+    border: 0;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    color: #fff;
+    font: 300 16px Lato, sans-serif;
+    letter-spacing: 1px;
+    line-height: 32px;
+    margin: 0;
+    padding: 10px 30px;
+    position: absolute;
+    right: 340px;
+    text-transform: uppercase;
+    top: -14px;
+}
+.edit {
+    display: none;
+}
+.edit:hover, .save:hover {
+    background-color: #417668;
+    cursor: pointer;
+}
+.search {
+    border: 0;
+    -webkit-border-radius: 26px;
+    -moz-border-radius: 26px;
+    border-radius: 26px;
+    font: 16px 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    line-height: 32px;
+    margin: 0;
+    position: fixed;
+    padding: 10px 10px 10px 52px;
+    right: 5px;
+    top: 6px;
+    width: 253px;
+}
+.search::-webkit-input-placeholder {
+    font-style: italic;
+    font-weight: 300;
+}
+.search::-moz-placeholder {
+    font-style: italic;
+}
+.search:-ms-input-placeholder {
+    font-style: italic;
+}
+.search:-moz-placeholder {
+    font-style: italic;
+}
+.search-icon {
+    color: #ddd;
+    font: 16px 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    line-height: 32px;
+    position: fixed;
+    right: 285px;
+    top: 16px;
+}
+.content {
+    padding-left: 5px;
+    padding-top: 85px;
+    height: 100%;
+}
+/*.definitions {
+    font-size: 14px;
+    float: right;
+    width: 320px;
+}*/
+.definitions {
+    bottom: 0;
+    font-size: 14px;
+    overflow-y: scroll;
+    padding-top: 85px;
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 320px;
+}
+.definitions .help {
+    color: #777;
+    font-style: italic;
+    padding-bottom: 5px;
+}
+.definition {
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 5px;
+    padding-bottom: 5px;
+}
+.phrase {
+    font-family: 'Times New Roman', Times, serif;
+    margin: 0;
+    padding: 0;
+}
+.definition h3 {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 14px;
+    margin: 0;
+    margin-top: 5px;
+    padding: 0;
+}
+.translations {
+    margin: 0;
+    padding: 0;
+}
+.meanings {
+    margin: 0;
+    padding-left: 25px;
+}
+.translation {
+    list-style-position: inside;
+}
+.translation ul {
+    list-style-type: lower-latin;
+    margin: 0;
+    padding-left: 25px;
+}
+.translation li {
+    list-style-position: outside;
+}
+.ta {
+    border: 1px solid #ccc;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    font: 16px 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    height: 500px;
+    width: 593px;
+    padding: 10px;
+}
+.text {
+    display: none;
+    font: 16px 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 11px;
+    width: 593px;
+    white-space: pre-wrap;       /* css-3 */
+    white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+    white-space: -pre-wrap;      /* Opera 4-6 */
+    white-space: -o-pre-wrap;    /* Opera 7 */
+    word-wrap: break-word;       /* Internet Explorer 5.5+ */
+}
+.footer {
+    border-top: 1px solid #ddd;
+    font-size: 14px;
+    font-style: italic;
+    margin-top: 20px;
+    padding: 5px;
+    width: 610px;
+}
+
+@media screen and (max-width: 960px) {
+    .search {
+        position: absolute;
+        right: 5px;
+        top: -14px;
+    }
+    .search-icon {
+        position: absolute;
+        right: 285px;
+        top: -4px;
+    }
+    .definitions {
+        font-size: 14px;
+        float: right;
+        padding: 0;
+        position: relative;
+        width: 320px;
+    }
+}
