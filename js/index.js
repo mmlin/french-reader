@@ -4,6 +4,18 @@ function translationCallback(data) {
 
     var $phrase = $('<h2 class="phrase">');
     $phrase.text(data.phrase).appendTo($d);
+
+    // If no result was found, link to the Collins French-English dictionary.
+    if (!data.tuc.length) {
+        var $notFound = $('<div class="not-found">').text("Not found; check ");
+        var href = 'http://www.collinsdictionary.com/dictionary/french-english/';
+        href += data.phrase.replace(/^\s+|\s+$/g, '').replace(/\s+/g, '-');
+        var $a = $('<a>').attr('href', href).text("Collins dictionary");
+        $a.appendTo($notFound);
+        $notFound.appendTo($d);
+        $d.prependTo($definitions);
+        return;
+    }
     
     $('<h3>English Translations</h3>').appendTo($d);
     var $translations = $('<ol class="translations">').appendTo($d);
