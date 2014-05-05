@@ -90,6 +90,39 @@ $(function() {
     }
 
     function translate(phrase) {
+        // Combine accents into a single accented character, if necessary.
+        // http://french.about.com/od/writing/ss/typeaccents_8.htm
+        // http://www.javascripter.net/faq/accentedcharacters.htm
+        // http://utf8-chartable.de/unicode-utf8-table.pl?start=767&number=128
+        var TRANSFORM = [
+            // Acute accent.
+            [/E\u0301/g, "\xC9"], // É
+            [/e\u0301/g, "\xE9"], // é
+
+            // Grave accent.
+            [/a\u0300/g, "\xE0"], // à
+            [/e\u0300/g, "\xE8"], // è
+            [/u\u0300/g, "\xF9"], // ù
+
+            // Cedilla (no combining accent).
+
+            // Circumflex.
+            [/a\u0302/g, "\xE2"], // â
+            [/e\u0302/g, "\xEA"], // ê
+            [/i\u0302/g, "\xEE"], // î
+            [/o\u0302/g, "\xF4"], // ô
+            [/u\u0302/g, "\xFB"], // û
+
+            // Trema.
+            [/e\u0308/g, "\xEB"], // ë
+            [/i\u0308/g, "\xEF"], // ï
+            [/u\u0308/g, "\xFC"] // ü
+
+            // oe ligature (no combining accent).
+        ];
+        for (var i = 0; i < TRANSFORM.length; i++)
+            phrase = phrase.replace(TRANSFORM[i][0], TRANSFORM[i][1]);
+
         var url = 'http://glosbe.com/gapi/translate?callback=?';
         var data = { from: 'fra', dest: 'eng', format: 'json', phrase: phrase,
             callback: 'translationCallback', pretty: true };
